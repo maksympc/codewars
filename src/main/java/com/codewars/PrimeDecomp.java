@@ -14,12 +14,11 @@ public class PrimeDecomp {
         StringBuilder result = new StringBuilder("");
         int currentDegree = 0;
         String value = "";
-        int number = n;
-        for (int i = 2; i < Math.sqrt(n); i++) {
-            if (number % i == 0) {
-                while (number % i == 0) {
+        for (int i = 2; i <= n; i++) {
+            if (n % i == 0) {
+                while (n % i == 0) {
                     currentDegree++;
-                    number /= i;
+                    n /= i;
                     if (currentDegree == 1)
                         value = "(" + i + ")";
                     else
@@ -34,5 +33,4 @@ public class PrimeDecomp {
         }
         return result.toString();
     }
-
 }
